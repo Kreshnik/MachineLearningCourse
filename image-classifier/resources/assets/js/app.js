@@ -30,7 +30,6 @@ async function classifyWebCam() {
     await setupWebcam();
     while (true) {
         const result = await net.classify(webcamElement);
-        console.log(document.getElementById('WebCam__console'));
     document.getElementById('WebCam__console').innerHTML = `
       <b> prediction: </b> ${result[0].className} <br/>
       <b>probability:</b> ${result[0].probability}

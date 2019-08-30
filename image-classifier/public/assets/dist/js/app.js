@@ -36748,34 +36748,33 @@ function _classifyWebCam() {
 
           case 10:
             result = _context2.sent;
-            console.log(document.getElementById('WebCam__console'));
             document.getElementById('WebCam__console').innerHTML = "\n      <b> prediction: </b> ".concat(result[0].className, " <br/>\n      <b>probability:</b> ").concat(result[0].probability, "\n    ");
 
             if (!(classifier.getNumClasses() > 0)) {
-              _context2.next = 20;
+              _context2.next = 19;
               break;
             }
 
             // Get the activation from mobilenet from the webcam.
             activation = net.infer(webcamElement, 'conv_preds'); // Get the most likely class and confidences from the classifier module.
 
-            _context2.next = 17;
+            _context2.next = 16;
             return classifier.predictClass(activation);
 
-          case 17:
+          case 16:
             _result = _context2.sent;
             classes = ['A', 'B', 'C'];
             document.getElementById('console').innerText = "\n        prediction: ".concat(classes[_result.classIndex], "\n\n        probability: ").concat(_result.confidences[_result.classIndex], "\n      ");
 
-          case 20:
-            _context2.next = 22;
+          case 19:
+            _context2.next = 21;
             return tf.nextFrame();
 
-          case 22:
+          case 21:
             _context2.next = 7;
             break;
 
-          case 24:
+          case 23:
           case "end":
             return _context2.stop();
         }
