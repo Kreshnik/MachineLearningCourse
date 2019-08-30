@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Image Classifier</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link href="public/assets/dist/css/app.css" rel="stylesheet">
+    <!-- Load the latest version of TensorFlow.js -->
+<script src="https://unpkg.com/@tensorflow/tfjs"></script>
+<script src="https://unpkg.com/@tensorflow-models/mobilenet"></script>
+<script src="https://unpkg.com/@tensorflow-models/knn-classifier"></script>
+</head>
+<body>
+<main>
+    <div class="container d-flex h-100 pt-5">
+        <div class="row justify-content-center align-self-center">
+            <h1>Homework Assignment (Image Classification)</h1>
+            
+                <div class="col-md-6">
+                    <div class="card">
+                        <div class="card-header">
+                            <h2>Image classifier</h2>
+                            <img id="Image" src="public/assets/img/dog.jpg">
+                        </div>
+                        <div class="card-body">
+                            <button class="btn btn-primary" id="Button__image">Classify Image</button>
+                            <p id="Image__console"></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card">
+                        <div class="card-header">
+                            <h2>WebCam classifier</h2>
+                            <video autoplay playsinline muted id="WebCam" width="480" height="360"></video>
+                        </div>
+                        <div class="card-body">
+                            <button class="btn btn-primary" id="Button__webcam">Classify WebCam</button>
+                            <div class="btn-group" role="group" aria-label="Basic example">
+                                <button type="button" id="class-a" class="btn btn-secondary">Add A</button>
+                                <button type="button" id="class-b" class="btn btn-secondary">Add B</button>
+                                <button type="button" id="class-c" class="btn btn-secondary">Add C</button>
+                            </div>
+                            <p id="WebCam__console"></p>
+                        </div>
+                    </div>
+                </div>
+            
+        </div>
+    </div>
+</main>
+<script src="public/assets/dist/js/app.js"></script>
+</body>
+</html>
