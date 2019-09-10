@@ -22,7 +22,7 @@ class StockPredictor:
         self.svrClassifier = SVR(kernel='linear', C=1e3)
 
         self.dataFrame = pd.read_csv('AAPL.csv')
-        self.dataFrame['Year'] = pd.DatetimeIndex(self.dataFrame['Date']).year
+        self.dataFrame['Year'] = pd.DatetimeIndex(self.dataFrame['Date']).year.astype(int)
         self.dataFrame['Month'] = pd.DatetimeIndex(self.dataFrame['Date']).month
         self.dataFrame['Day'] = pd.DatetimeIndex(self.dataFrame['Date']).day
 
@@ -48,12 +48,13 @@ class StockPredictor:
         }
 
     def plot_prediction(self, period="Year", numeric_value=0):
+        style.use('ggplot')
+        mpl.rc('figure', figsize=(8, 7))
         predictions = self.predict(numeric_value)
-        pass  # TODO: Need to learn how to properly plot the data
-        plt.scatter(self.dataFrame[period], self.dataFrame['Adj Close'], color='black', label='Data')
-        plt.plot([numeric_value, predictions['linear']], color='red', label='Linear Regression')
-        plt.plot([numeric_value, predictions['polynomial']], color='green', label='Polynomial Regression')
-        plt.plot([numeric_value, predictions['svr']], color='blue', label='SVR Regression')
+        plt.scatter(self.dataFrame[period], self.dataFrame['Adj Close'], color='blue', label='Real')
+        plt.scatter(numeric_value, predictions['linear'], color='red', label='Linear regression prediction')
+        plt.scatter(numeric_value, predictions['polynomial'], color='green', label='Polynomial regression prediction')
+        plt.scatter(numeric_value, predictions['svr'], color='orange', label='SVR regression prediction')
         plt.xlabel(period)
         plt.ylabel('Price')
         plt.title(period + ' Stock Prediction')
