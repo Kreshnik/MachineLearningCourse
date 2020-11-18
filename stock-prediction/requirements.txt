@@ -114,7 +114,7 @@ nbformat==4.4.0
 netifaces==0.10.9
 networkx==2.3
 nltk==3.4.5
-notebook==6.0.1
+notebook==6.1.5
 numba==0.45.1
 numpy==1.17.1
 opencv-contrib-python==4.1.1.26
