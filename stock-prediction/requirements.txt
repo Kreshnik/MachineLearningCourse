@@ -201,7 +201,7 @@ twilio==6.30.0
 typed-ast==1.4.0
 tzlocal==2.0.0
 ujson==1.35
-urllib3==1.25.3
+urllib3==1.25.8
 uvloop==0.13.0
 wcwidth==0.1.7
 webencodings==0.5.1
